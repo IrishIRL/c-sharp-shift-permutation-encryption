@@ -113,52 +113,5 @@ namespace Decipher
             // Here we return the newly encrypted text
             return encrypted;
         }
-        
-        // PS. Here is the not so beautiful variant of the same code (without functions)
-                    /*
-            // Creating first enciphered part (Shift to 17)
-            char[] cipherOne = new char[plaintextArray.Length];
-            for (int i = 0; i < plaintextArray.Length; i++)
-            {
-                var letterToIndex = Array.FindIndex(letters, element => element == plaintextArray[i]);
-                letterToIndex += shiftOne;
-                cipherOne[i] = letters[letterToIndex % 26];
-            }
-            Console.WriteLine(cipherOne);
-            
-            // Creating second enciphered part (Permutation (5, 1, 3, 2, 4))
-            char[] cipherTwo = new char[plaintextArray.Length];
-            int counter = 0;
-            for (int i = 0; i < plaintextArray.Length; i++)
-            {
-                if (i == permutationOne.Length) counter++;
-                int location = (permutationOne[i % permutationOne.Length] - 1);
-
-                cipherTwo[i] = cipherOne[location + counter * permutationOne.Length];
-            }
-            Console.WriteLine(cipherTwo);
-            
-            // Creating first enciphered part (Shift to 8)
-            char[] cipherThree = new char[plaintextArray.Length];
-            for (int i = 0; i < plaintextArray.Length; i++)
-            {
-                var letterToIndex = Array.FindIndex(letters, element => element == cipherTwo[i]);
-                letterToIndex += shiftTwo;
-                cipherThree[i] = letters[letterToIndex % 26];
-            }
-            Console.WriteLine(cipherThree);
-            
-            // Creating second enciphered part (Permutation (3, 4, 5, 1, 2))
-            char[] cipherFour = new char[plaintextArray.Length];
-            counter = 0;
-            for (int i = 0; i < plaintextArray.Length; i++)
-            {
-                 if (i % permutationTwo.Length == 0) counter++;
-                int location = (permutationTwo[i % permutationTwo.Length] - 1);
-
-                cipherFour[i] = cipherThree[location + counter * permutationTwo.Length];
-            }
-            Console.WriteLine(cipherFour);
-            */
     }
 }
